@@ -1,4 +1,4 @@
-# Justin Efeoghene Igugu Lassod Front-end Task
+# Efeoghene Justin Igugu Bankly Front-end Task
 
 #### Technologies
 
