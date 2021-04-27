@@ -53,13 +53,14 @@ const DebitCard = () => {
   };
   const handleValidation = (e) => {
     if (validateInput(e) === true) {
-      e.target.style.border = "2px solid green";
-      // e.target.nextElementSibling.style.display = "none";
       // e.target.nextElementSibling.style.display = "block";
+      // e.target.style.border = "2px solid red";
     }
     if (validateInput(e) === false) {
-      e.target.style.border = "2px solid red";
+      // e.target.style.border = "2px solid green";
+      // e.target.nextElementSibling.style.display = "none";
     }
+    console.log("==============>", validateInput(e));
   };
   return (
     <Fragment>
