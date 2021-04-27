@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { debitAction } from "./views/actions";
+import DebitCard from "./views/DebitCard";
+import "./App.scss";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const debit = localStorage.getItem("debit");
+    if (debit) {
+      dispatch(debitAction(JSON.parse(debit)));
+    }
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={DebitCard} />
+        </Switch>
+      </Router>
     </div>
   );
 }
